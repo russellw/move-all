@@ -73,9 +73,15 @@ namespace move_all
                 return 1;
             }
             foreach (string entry in Directory.GetDirectories("."))
+            {
                 Directory.Move(entry, dir + "/" + Path.GetFileName(entry));
+                Console.WriteLine(entry);
+            }
             foreach (string entry in Directory.GetFiles("."))
+            {
                 Directory.Move(entry, dir + "/" + Path.GetFileName(entry));
+                Console.WriteLine(entry);
+            }
             return 0;
         }
     }
